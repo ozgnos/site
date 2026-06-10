@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/learn", "destination": "/library", "permanent": true },
+    { "source": "/learn/:slug", "destination": "/library/:slug", "permanent": true }
+  ]
+}
