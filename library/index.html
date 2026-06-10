@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var s=localStorage.getItem('ozgnos-theme');if(s==='light'||s==='dark')document.documentElement.setAttribute('data-theme',s);}catch(e){}})();</script>
+<title>Crypto 101 · Ozgnos</title>
+<meta name="description" content="A plain-English crypto education library. No hype, no advice, just the essentials.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ozgnos">
+<meta property="og:title" content="Crypto 101 · Ozgnos">
+<meta property="og:description" content="A plain-English crypto education library. No hype, no advice, just the essentials.">
+<meta property="og:url" content="https://ozgnos.com/library">
+<meta property="og:image" content="https://ozgnos.com/og/library.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Crypto 101 · Ozgnos">
+<meta name="twitter:description" content="A plain-English crypto education library. No hype, no advice, just the essentials.">
+<meta name="twitter:image" content="https://ozgnos.com/og/library.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script defer src="/nav.js"></script>
+<style>
+.hero h1 em, .lib-hero h1 em{font-style:italic;color:var(--gold)}
+.post .thumb svg{width:42px;height:42px;opacity:.75;color:var(--fg)}
+.chapter-jump{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin:30px auto 0;max-width:680px;position:static;top:auto;z-index:auto;transform:none;background:none;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none}
+.chapter-pill{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);color:var(--fg-dim);text-decoration:none;font-size:13px;padding:9px 16px;border-radius:999px;transition:border-color .2s,color .2s}
+.chapter-pill:hover{border-color:var(--blue);color:var(--fg)}
+.chapter-pill .n{color:var(--gold);font-weight:700}
+.module{margin-top:46px;scroll-margin-top:24px}
+</style>
+<script defer src="https://analytics.ozgnos.com/script.js" data-website-id="f2d52f8f-84c6-47b9-b4ff-22d0c1a70944"></script>
+</head>
+<body>
+<div class="grid-bg"></div>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="logo" viewBox="94 104 210 193">
+  <path fill-rule="evenodd" fill="currentColor" d="M159.962860,125.496872 C159.029373,125.853149 158.089172,126.192841 157.163391,126.568100 C120.783546,141.314377 100.579056,178.711884 108.249306,217.134079 C115.546051,253.685394 148.517197,280.426819 183.490021,280.798706 C186.019424,280.825592 188.252838,280.866394 189.828354,283.628815 C192.725204,288.707947 197.483887,290.720642 203.270081,290.637878 C214.226883,290.481140 224.623306,287.920776 234.820511,284.011597 C273.555847,269.161896 297.927887,224.375778 289.122620,183.956955 C280.351105,143.693085 250.099274,116.341080 208.872330,111.567314 C201.013657,110.657349 193.372513,110.859482 189.036346,119.338509 C187.922882,121.515800 185.659271,121.183983 183.695648,121.186821 C175.789185,121.198242 168.155457,122.675713 159.962860,125.496872 z M183.955368,255.361206 C156.399033,252.359436 138.291016,235.978577 133.102997,209.752762 C127.529404,181.577850 148.463196,151.895233 176.897873,147.609100 C180.188950,147.113007 183.452393,146.619064 186.805878,146.582474 C191.698288,146.529083 195.393448,144.084534 197.793884,139.905441 C199.138794,137.563965 200.840012,136.782013 203.508011,136.980621 C234.870667,139.315216 258.152344,159.310165 263.889038,190.037964 C270.518951,225.550079 245.268875,260.519745 208.132217,264.480164 C203.059250,265.021179 199.072601,265.321350 195.925247,259.982971 C193.670212,256.158112 189.013779,255.021378 183.955368,255.361206 z"/>
+</symbol></defs></svg>
+<div class="wrap">
+<nav class="site-nav">
+    <a class="brand" href="/"><svg><use href="#logo"/></svg><span class="nm">Ozgnos</span></a>
+    <div class="navlinks" id="navlinks">
+      <a href="/library">Library</a>
+      <a href="/markets">Markets</a>
+      <a href="/newsletter">Newsletter</a>
+      <a href="/#about">About</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+<section class="lib-hero"><div class="eyebrow">Crypto · 101</div><h1>The beginner's <em>first stop</em>.</h1><p>The fundamentals of crypto, in plain English: what it is, how it works, and how to stay safe. One idea at a time, explained simply.</p></section>
+<nav class="chapter-jump" aria-label="Jump to a chapter">
+  <a class="chapter-pill" href="#mod-01"><span class="n">01</span>Foundations</a>
+  <a class="chapter-pill" href="#mod-02"><span class="n">02</span>Before You Touch It</a>
+  <a class="chapter-pill" href="#mod-03"><span class="n">03</span>How It Works</a>
+  <a class="chapter-pill" href="#mod-04"><span class="n">04</span>Reading the Market</a>
+</nav>
+
+<!-- THE LIBRARY: lesson cards are static HTML (crawlable, no JS needed).
+     To add a lesson: copy one <a class="lesson-card"> block inside the right chapter.
+     To add a chapter: copy a <section class="module"> block AND add a matching
+     pill to the chapter-jump nav above. -->
+<section class="module" id="mod-01">
+  <div class="module-head"><span class="module-num">01</span><div><h2>Foundations</h2><p>Start from zero. What this is, and why it exists.</p></div></div>
+  <div class="lessons">
+    <a class="lesson-card" href="/library/what-is-cryptocurrency"><div><div class="lesson-title">What Is Cryptocurrency? Start Here.</div><div class="lesson-summary">Cryptocurrency is money that lives on the internet and isn&#x27;t controlled by any single bank, company, or government.</div></div><div class="lesson-meta">4 min</div></a>
+    <a class="lesson-card" href="/library/what-is-blockchain"><div><div class="lesson-title">What Is Blockchain? The Shared Record Behind It All</div><div class="lesson-summary">A blockchain is a record book that thousands of computers keep at the same time, so no single one can secretly change it.</div></div><div class="lesson-meta">4 min</div></a>
+    <a class="lesson-card" href="/library/coins-tokens-bitcoin"><div><div class="lesson-title">Coins, Tokens, and Bitcoin: What&#x27;s the Difference?</div><div class="lesson-summary">A coin has its own blockchain, a token is built on top of someone else&#x27;s, and Bitcoin is just the first and biggest coin.</div></div><div class="lesson-meta">4 min</div></a>
+    <a class="lesson-card" href="/library/why-crypto-has-value"><div><div class="lesson-title">Why Does Crypto Have Value?</div><div class="lesson-summary">Crypto has value for the same reason most things do, people want it and there&#x27;s a limited amount, but it&#x27;s worth being honest that this is also the most debated question in crypto.</div></div><div class="lesson-meta">5 min</div></a>
+  </div>
+</section>
+
+<section class="module" id="mod-02">
+  <div class="module-head"><span class="module-num">02</span><div><h2>Before You Touch It</h2><p>Exchanges, wallets, and keeping yourself safe.</p></div></div>
+  <div class="lessons">
+    <a class="lesson-card" href="/library/what-is-an-exchange"><div><div class="lesson-title">What Is a Crypto Exchange?</div><div class="lesson-summary">An exchange is where you swap regular money for crypto (and back), and there are two kinds, one run by a company and one run by code.</div></div><div class="lesson-meta">4 min</div></a>
+    <a class="lesson-card" href="/library/what-is-a-wallet"><div><div class="lesson-title">What Is a Crypto Wallet?</div><div class="lesson-summary">A crypto wallet doesn&#x27;t actually hold your coins, it holds the keys that prove the coins are yours.</div></div><div class="lesson-meta">4 min</div></a>
+    <a class="lesson-card" href="/library/seed-phrase"><div><div class="lesson-title">Your Seed Phrase: The One Rule That Matters Most</div><div class="lesson-summary">Your seed phrase is the master key to everything you own in crypto. Write it down, keep it offline, and never share it with anyone.</div></div><div class="lesson-meta">4 min</div></a>
+    <a class="lesson-card" href="/library/common-crypto-scams"><div><div class="lesson-title">Common Crypto Scams, and How to Spot Them</div><div class="lesson-summary">Almost every crypto scam works by creating urgency, faking authority, or promising free money. Learn the patterns once, and you&#x27;ll see them coming.</div></div><div class="lesson-meta">5 min</div></a>
+    <a class="lesson-card" href="/library/staying-safe-checklist"><div><div class="lesson-title">Staying Safe: A Crypto Security Checklist</div><div class="lesson-summary">Good crypto security isn&#x27;t about being paranoid, it&#x27;s about a few simple habits that, done consistently, stop almost every common attack.</div></div><div class="lesson-meta">4 min</div></a>
+  </div>
+</section>
+
+<section class="module" id="mod-03">
+  <div class="module-head"><span class="module-num">03</span><div><h2>How It Works</h2><p>Fees, networks, and stablecoins.</p></div></div>
+  <div class="lessons">
+    <a class="lesson-card" href="/library/transactions-fees-gas"><div><div class="lesson-title">Transactions, Fees, and &quot;Gas&quot;</div><div class="lesson-summary">Every time you move crypto on a blockchain, you pay a small fee called &quot;gas,&quot; and it exists to pay the network and stop people from spamming it.</div></div><div class="lesson-meta">4 min</div></a>
+    <a class="lesson-card" href="/library/networks-and-layers"><div><div class="lesson-title">Networks and &quot;Layers&quot;: Why So Many Chains?</div><div class="lesson-summary">There isn&#x27;t one blockchain, there are many, and &quot;Layer 2&quot; just means a faster, cheaper network built on top of a slower, more secure one.</div></div><div class="lesson-meta">4 min</div></a>
+    <a class="lesson-card" href="/library/stablecoins-explained"><div><div class="lesson-title">Stablecoins: The &quot;Digital Dollar,&quot; and Why It&#x27;s Not Risk-Free</div><div class="lesson-summary">A stablecoin is crypto designed to hold a steady value, usually one US dollar, but the calm name hides some real risks worth knowing.</div></div><div class="lesson-meta">5 min</div></a>
+  </div>
+</section>
+
+<section class="module" id="mod-04">
+  <div class="module-head"><span class="module-num">04</span><div><h2>Reading the Market</h2><p>Data and indicators, explained as education.</p></div></div>
+  <div class="lessons">
+    <a class="lesson-card" href="/library/how-to-read-market-data"><div><div class="lesson-title">How to Read Crypto Market Data</div><div class="lesson-summary">Price, market cap, and volume each tell you something useful, but only when you read them together, and knowing what they don&#x27;t say is just as important.</div></div><div class="lesson-meta">4 min</div></a>
+    <a class="lesson-card" href="/library/what-are-indicators"><div><div class="lesson-title">What Are Indicators? Reading the Ozgnos Dashboard</div><div class="lesson-summary">Indicators are math applied to past price data to describe what&#x27;s happening, like a weather forecast for the market, useful for context, never a command to act.</div></div><div class="lesson-meta">5 min</div></a>
+    <a class="lesson-card" href="/library/fear-and-greed-index"><div><div class="lesson-title">The Fear &amp; Greed Index: Reading the Market&#x27;s Mood</div><div class="lesson-summary">The Fear &amp; Greed Index boils the market&#x27;s overall emotion down to a single number from 0 to 100, a snapshot of mood, not a prediction of what comes next.</div></div><div class="lesson-meta">5 min</div></a>
+    <a class="lesson-card" href="/library/why-dyor-matters"><div><div class="lesson-title">Why &quot;DYOR&quot; Matters (and How to Actually Do It)</div><div class="lesson-summary">DYOR means &quot;Do Your Own Research,&quot; and it&#x27;s the habit of verifying things yourself instead of trusting anyone&#x27;s word, including ours.</div></div><div class="lesson-meta">5 min</div></a>
+  </div>
+</section>
+
+<footer>
+    <div class="l">© <span id="yr"></span> Ozgnos · Not financial advice · DYOR</div>
+    <div class="socials">
+      <a href="https://x.com/ozgnos" target="_blank" rel="noopener" id="x-link">X / Twitter</a>
+      <a href="https://t.me/ozgnosofficial" target="_blank" rel="noopener" id="tg-link">Telegram</a>
+      <a href="/newsletter" id="nl-link">Newsletter</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+  </footer>
+</div>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+document.getElementById('themeToggle').addEventListener('click', function(){
+  var root = document.documentElement;
+  var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  root.setAttribute('data-theme', next);
+  try { localStorage.setItem('ozgnos-theme', next); } catch(e){}
+});
+var navlinks = document.getElementById('navlinks');
+document.getElementById('menuToggle').addEventListener('click', function(){ navlinks.classList.toggle('open'); });
+document.querySelectorAll('#navlinks a').forEach(function(a){ a.addEventListener('click', function(){ navlinks.classList.remove('open'); }); });
+
+</script>
+</body>
+</html>
