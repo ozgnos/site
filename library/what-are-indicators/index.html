@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var s=localStorage.getItem('ozgnos-theme');if(s==='light'||s==='dark')document.documentElement.setAttribute('data-theme',s);}catch(e){}})();</script>
+<title>What Are Indicators? Reading the Ozgnos Dashboard · Ozgnos</title>
+<meta name="description" content="Indicators are math applied to past price data to describe what's happening — like a weather forecast for the market: useful for context, never a command to act.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Ozgnos">
+<meta property="og:title" content="What Are Indicators? Reading the Ozgnos Dashboard">
+<meta property="og:description" content="Indicators are math applied to past price data to describe what's happening — like a weather forecast for the market: useful for context, never a command to act.">
+<meta property="og:url" content="https://ozgnos.com/library/what-are-indicators">
+<meta property="og:image" content="https://ozgnos.com/og/what-are-indicators.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Are Indicators? Reading the Ozgnos Dashboard">
+<meta name="twitter:description" content="Indicators are math applied to past price data to describe what's happening — like a weather forecast for the market: useful for context, never a command to act.">
+<meta name="twitter:image" content="https://ozgnos.com/og/what-are-indicators.png">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script defer src="/nav.js"></script>
+<script defer src="https://analytics.ozgnos.com/script.js" data-website-id="f2d52f8f-84c6-47b9-b4ff-22d0c1a70944"></script>
+</head>
+<body>
+<div class="grid-bg"></div>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="logo" viewBox="94 104 210 193">
+  <path fill-rule="evenodd" fill="currentColor" d="M159.962860,125.496872 C159.029373,125.853149 158.089172,126.192841 157.163391,126.568100 C120.783546,141.314377 100.579056,178.711884 108.249306,217.134079 C115.546051,253.685394 148.517197,280.426819 183.490021,280.798706 C186.019424,280.825592 188.252838,280.866394 189.828354,283.628815 C192.725204,288.707947 197.483887,290.720642 203.270081,290.637878 C214.226883,290.481140 224.623306,287.920776 234.820511,284.011597 C273.555847,269.161896 297.927887,224.375778 289.122620,183.956955 C280.351105,143.693085 250.099274,116.341080 208.872330,111.567314 C201.013657,110.657349 193.372513,110.859482 189.036346,119.338509 C187.922882,121.515800 185.659271,121.183983 183.695648,121.186821 C175.789185,121.198242 168.155457,122.675713 159.962860,125.496872 z M183.955368,255.361206 C156.399033,252.359436 138.291016,235.978577 133.102997,209.752762 C127.529404,181.577850 148.463196,151.895233 176.897873,147.609100 C180.188950,147.113007 183.452393,146.619064 186.805878,146.582474 C191.698288,146.529083 195.393448,144.084534 197.793884,139.905441 C199.138794,137.563965 200.840012,136.782013 203.508011,136.980621 C234.870667,139.315216 258.152344,159.310165 263.889038,190.037964 C270.518951,225.550079 245.268875,260.519745 208.132217,264.480164 C203.059250,265.021179 199.072601,265.321350 195.925247,259.982971 C193.670212,256.158112 189.013779,255.021378 183.955368,255.361206 z"/>
+</symbol></defs></svg>
+<div class="wrap">
+<nav class="site-nav">
+    <a class="brand" href="/"><svg><use href="#logo"/></svg><span class="nm">Ozgnos</span></a>
+    <div class="navlinks" id="navlinks">
+      <a href="/library">Library</a>
+      <a href="/markets">Markets</a>
+      <a href="/newsletter">Newsletter</a>
+      <a href="/about">About</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+<section class="article-hero"><a class="back" href="/library">← All lessons</a><div class="eyebrow">Reading the Market</div><h1>What Are Indicators? Reading the Ozgnos Dashboard</h1><div class="meta">5 min read</div></section>
+<article class="article-body"><p>Crypto charts are covered in indicators with names like RSI, moving averages, MACD. They look intimidating and authoritative, which leads beginners to treat them as crystal balls. They aren't. Here's what they actually are, using the ones on the Ozgnos dashboard.</p>
+<h2>What an indicator really is</h2>
+<p>An indicator is a mathematical calculation derived from price and volume data, used to analyze trends. That's the whole thing. It takes numbers that already happened and reshapes them into something easier to read. The key word is "already happened." Indicators describe the past and present. They do not know the future.</p>
+<p>The best mental model is a weather forecast. It reads current conditions and tells you it looks like rain. Useful for deciding whether to grab an umbrella. But it's a probability based on patterns, not a guarantee, and sometimes it's simply wrong. Treat indicators the same way.</p>
+<h2>RSI: a momentum gauge</h2>
+<p>The Relative Strength Index (RSI) rates the strength of recent price moves on a scale from 0 to 100, comparing recent gains to recent losses. Traders watch three numbers: 70, 50, and 30. Above 70 is considered "overbought," below 30 "oversold," and 50 is balanced.</p>
+<p>But here's the part that matters most, straight from how professionals actually talk about it: these numbers are not signals. They are context. A high RSI doesn't mean "sell" and a low one doesn't mean "buy." RSI can stay overbought or oversold for long stretches during a strong trend, which is exactly when reacting blindly to it leads to losses. It's a description of momentum, nothing more.</p>
+<h2>Moving averages: smoothing the noise</h2>
+<p>A moving average smooths out price data to make the overall direction easier to see. The 50-day and 200-day averages are common ways to read longer-term trends. Daily prices are jumpy; an average irons out the noise so you can see the broader drift. On the Ozgnos dashboard, that's what the "trend" reading is doing, comparing a shorter average to a longer one to describe which way things have been leaning.</p>
+<h2>Why one indicator is never enough</h2>
+<p>This is the most important habit. Indicators are lagging, they react after a move has already started, and in choppy or volatile markets they give false signals. They should not be used alone. That's precisely why the Ozgnos dashboard shows several together (RSI, trend, distance from average, and the Fear &amp; Greed mood) and gives you a combined, plain-language read. Not to tell you what to do, but to show several angles at once so no single number misleads you.</p>
+<h2>The honest bottom line</h2>
+<p>Indicators are genuinely useful for one thing: seeing the current situation more clearly. They are useless, even harmful, when treated as fortune-telling. Anyone selling you "this indicator says buy now" is misunderstanding the tool, or misusing it on purpose. The Ozgnos dashboard deliberately describes and explains, and stops there. What you do with that picture is, and should always be, your decision.</p>
+<h2>The takeaway</h2>
+<p>Indicators are math that turns past prices into readable context, like a forecast, not a fact. RSI gauges momentum (70/30 are context, not commands). Moving averages reveal the broader trend. No single one is reliable alone, which is why Ozgnos shows them together and never as advice. Read them to understand, not to obey.</p></article>
+<a class="next-up" href="/library/fear-and-greed-index"><span class="next-label">Next up →</span><span class="next-title">The Fear &amp; Greed Index: reading the market&#x27;s mood</span></a>
+<p class="nl-line">Want breakdowns like this in your inbox? <a href="/newsletter" data-umami-event="article-newsletter-link">Join the free newsletter →</a></p>
+<p class="fin-note">Educational only, not financial advice. Ozgnos helps you understand crypto; what you do with it is your call.</p>
+<footer>
+    <div class="l">© <span id="yr"></span> Ozgnos · Not financial advice · DYOR</div>
+    <div class="socials">
+      <a href="https://x.com/ozgnos" target="_blank" rel="noopener" data-umami-event="outbound-x" id="x-link">X / Twitter</a>
+      <a href="https://t.me/ozgnosofficial" target="_blank" rel="noopener" data-umami-event="outbound-telegram" id="tg-link">Telegram</a>
+      <a href="/newsletter" id="nl-link">Newsletter</a>
+      <a href="/disclosure">How we make money</a>
+      <a href="mailto:contact@ozgnos.com">Contact</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+  </footer>
+</div>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+document.getElementById('themeToggle').addEventListener('click', function(){
+  var root = document.documentElement;
+  var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  root.setAttribute('data-theme', next);
+  try { localStorage.setItem('ozgnos-theme', next); } catch(e){}
+});
+var navlinks = document.getElementById('navlinks');
+document.getElementById('menuToggle').addEventListener('click', function(){ navlinks.classList.toggle('open'); });
+document.querySelectorAll('#navlinks a').forEach(function(a){ a.addEventListener('click', function(){ navlinks.classList.remove('open'); }); });
+</script>
+</body>
+</html>

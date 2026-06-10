@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var s=localStorage.getItem('ozgnos-theme');if(s==='light'||s==='dark')document.documentElement.setAttribute('data-theme',s);}catch(e){}})();</script>
+<title>Crypto & Taxes: The Basics Nobody Tells Beginners · Ozgnos</title>
+<meta name="description" content="Crypto is taxed in most countries, exchanges report to authorities, and crypto-to-crypto swaps often count. The general patterns, the record-keeping habit, and why 'anonymous' is a myth.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Ozgnos">
+<meta property="og:title" content="Crypto &amp; Taxes: The Basics Nobody Tells Beginners">
+<meta property="og:description" content="Crypto is taxed in most countries, exchanges report to authorities, and crypto-to-crypto swaps often count. The general patterns, the record-keeping habit, and why 'anonymous' is a myth.">
+<meta property="og:url" content="https://ozgnos.com/library/crypto-and-taxes">
+<meta property="og:image" content="https://ozgnos.com/og/crypto-and-taxes.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Crypto &amp; Taxes: The Basics Nobody Tells Beginners">
+<meta name="twitter:description" content="Crypto is taxed in most countries, exchanges report to authorities, and crypto-to-crypto swaps often count. The general patterns, the record-keeping habit, and why 'anonymous' is a myth.">
+<meta name="twitter:image" content="https://ozgnos.com/og/crypto-and-taxes.png">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script defer src="/nav.js"></script>
+<style>
+/* Referral note styling — shared pattern with other revenue lessons */
+.ref-note{font-size:12px;color:var(--muted);line-height:1.6;margin:8px 0 0}
+.ref-note a{color:var(--muted);text-decoration:underline}
+</style>
+<script defer src="https://analytics.ozgnos.com/script.js" data-website-id="f2d52f8f-84c6-47b9-b4ff-22d0c1a70944"></script>
+</head>
+<body>
+<div class="grid-bg"></div>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="logo" viewBox="94 104 210 193">
+  <path fill-rule="evenodd" fill="currentColor" d="M159.962860,125.496872 C159.029373,125.853149 158.089172,126.192841 157.163391,126.568100 C120.783546,141.314377 100.579056,178.711884 108.249306,217.134079 C115.546051,253.685394 148.517197,280.426819 183.490021,280.798706 C186.019424,280.825592 188.252838,280.866394 189.828354,283.628815 C192.725204,288.707947 197.483887,290.720642 203.270081,290.637878 C214.226883,290.481140 224.623306,287.920776 234.820511,284.011597 C273.555847,269.161896 297.927887,224.375778 289.122620,183.956955 C280.351105,143.693085 250.099274,116.341080 208.872330,111.567314 C201.013657,110.657349 193.372513,110.859482 189.036346,119.338509 C187.922882,121.515800 185.659271,121.183983 183.695648,121.186821 C175.789185,121.198242 168.155457,122.675713 159.962860,125.496872 z M183.955368,255.361206 C156.399033,252.359436 138.291016,235.978577 133.102997,209.752762 C127.529404,181.577850 148.463196,151.895233 176.897873,147.609100 C180.188950,147.113007 183.452393,146.619064 186.805878,146.582474 C191.698288,146.529083 195.393448,144.084534 197.793884,139.905441 C199.138794,137.563965 200.840012,136.782013 203.508011,136.980621 C234.870667,139.315216 258.152344,159.310165 263.889038,190.037964 C270.518951,225.550079 245.268875,260.519745 208.132217,264.480164 C203.059250,265.021179 199.072601,265.321350 195.925247,259.982971 C193.670212,256.158112 189.013779,255.021378 183.955368,255.361206 z"/>
+</symbol></defs></svg>
+<div class="wrap">
+<nav class="site-nav">
+    <a class="brand" href="/"><svg><use href="#logo"/></svg><span class="nm">Ozgnos</span></a>
+    <div class="navlinks" id="navlinks">
+      <a href="/library">Library</a>
+      <a href="/markets">Markets</a>
+      <a href="/newsletter">Newsletter</a>
+      <a href="/about">About</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+<section class="article-hero"><a class="back" href="/library">← All lessons</a><div class="eyebrow">The Fine Print</div><h1>Crypto &amp; Taxes: The Basics Nobody Tells Beginners</h1><div class="meta">5 min read</div></section>
+<article class="article-body"><p>Let's open with the necessary sentence, said plainly: <strong>we are not tax advisors, tax rules differ by country and change often, and nothing here replaces a professional or your tax authority's own guidance.</strong> What this lesson can do — and what almost nobody does for beginners — is show you the general shape of how crypto taxation works in most places, so the right questions occur to you <em>before</em> they become expensive. Because the most common crypto tax mistake isn't cheating. It's not knowing there was anything to know.</p>
+
+<h2>First, retire a dangerous myth</h2>
+<p>"Crypto is anonymous, nobody can see it" is folklore from another decade, and believing it has real consequences. You already know from <a href="/library/what-is-blockchain">the blockchain lesson</a> that every transaction sits on a public, permanent record — the opposite of invisible. And the front door has your name on it: <a href="/library/how-to-buy-your-first-crypto">regulated exchanges verify your identity</a>, and they increasingly report customer activity to tax authorities. International frameworks now being rolled out — the OECD's crypto reporting standard and its EU implementation — are making that exchange-to-authority pipeline automatic across dozens of countries. Plan on the assumption that your tax authority can know, because increasingly, it simply does.</p>
+
+<h2>The general shape: what usually counts and what usually doesn't</h2>
+<p>The single biggest surprise hides here, so let's lead with it. In many countries, the taxable moment isn't only "cashing out to euros." It's <strong>disposing</strong> of crypto — and disposal is a wider word than beginners expect:</p>
+<ul>
+<li><strong>Usually taxable:</strong> selling crypto for regular money; <strong>swapping one crypto for another</strong> (yes — trading ETH for a token is commonly treated as selling the ETH, even though no euros touched your hands); spending crypto on goods or services. Income-like events — <a href="/library/mining-and-staking">staking rewards</a>, airdrops, getting paid in crypto — are often taxed separately, as income on arrival.</li>
+<li><strong>Usually not taxable:</strong> buying crypto with regular money and holding it (paper gains generally aren't taxed until you dispose); moving coins <a href="/library/hot-and-cold-wallets">between your own wallets</a> — though you'll want records proving both sides were yours.</li>
+</ul>
+<p>The word doing all the heavy lifting above is <em>usually</em>. The variation between countries is enormous: some treat gains as capital gains, some as income; some apply a flat rate; some exempt coins held longer than a set period; a few barely tax individuals' crypto at all. Two people with identical trades in different countries can owe wildly different amounts. That's why the assignment at the end of this lesson is one search: your country's name plus "crypto tax," on your tax authority's own site — <a href="/library/why-dyor-matters">primary sources</a>, as ever.</p>
+
+<h2>The habit that saves you: records, from day one</h2>
+<p>Here's the regret every crypto old-timer shares, so learn it secondhand: <strong>keep records of everything, starting now.</strong> When tax time comes, you'll need to reconstruct what you bought, when, for how much, and what you disposed of it for — for every transaction, potentially years later. The painful part: exchanges shut down, accounts get closed, history exports stop being available. The blockchain remembers <a href="/library/how-to-research-a-project">forever</a>; your access to tidy CSV files does not. Export your transaction history regularly and keep your own copies. Your future self, sitting in front of a tax form, is the person you're working for.</p>
+<p>If your activity grows beyond a handful of trades, crypto tax software exists for exactly this problem — tools like Koinly or CoinTracking connect to your exchanges and wallets, pull the history together, and calculate gains under your country's rules. For anyone with hundreds of transactions across platforms, they turn a nightmare weekend into an import job. They're calculators, not advisors — the responsibility for what gets filed stays yours.</p>
+<!-- ════════════ REFERANS LİNK BLOĞU (PASİF — anlaşma yapılınca aç) ════════════
+     Koinly (ve/veya CoinTracking) affiliate anlaşması netleşince:
+     1. vercel.json'a /go/koinly redirect'ini ekle
+     2. /disclosure sayfasındaki partner tablosuna satır ekle
+     3. Yukarıdaki paragraftaki "Koinly" kelimesini şu linkle değiştir:
+        <a href="/go/koinly" target="_blank" rel="sponsored noopener" data-umami-event="go-koinly">Koinly</a>
+     4. Paragrafın hemen altına şu notu ekle (yorumdan çıkar):
+
+<p class="ref-note">The Koinly link above is a referral link (it starts with ozgnos.com/go/ — all our referral links do). If you subscribe through it, they pay us a commission at no extra cost to you. It never changes what we write. <a href="/disclosure">How we make money →</a></p>
+════════════ /REFERANS LİNK BLOĞU ════════════ -->
+
+<h2>Three traps worth naming</h2>
+<p><strong>The swap trap</strong> you've met: a year of active crypto-to-crypto trading can build a real tax bill even if you never cashed out a cent — and if the market then <a href="/library/market-cycles">turns</a>, the bill survives the portfolio that was supposed to pay it. <strong>The "small amounts don't matter" trap:</strong> some countries do have minimum thresholds and exemptions, but that's a rule to verify for your country, not an assumption to make. <strong>The lost-records trap</strong> is the previous section — it earns a second mention because it's the one that compounds silently.</p>
+
+<h2>The takeaway</h2>
+<p>Crypto is taxed in most of the world, the authorities increasingly receive your exchange data automatically, and the taxable moment is usually <em>disposal</em> — which includes crypto-to-crypto swaps, not just cashing out. Rules vary enormously by country, so the only universal advice is procedural: check your own tax authority's guidance, keep complete records from day one, and bring in a professional once real money is involved. Boring, yes. So is every alternative that ends well.</p>
+<p><em>Nothing in this lesson is tax advice. Rules differ by jurisdiction and change frequently — verify everything against your country's current official guidance or a qualified professional.</em></p></article>
+<a class="next-up" href="/library/crypto-regulation"><span class="next-label">Next up →</span><span class="next-title">Crypto regulation in plain English (including MiCA)</span></a>
+
+<p class="nl-line">Want breakdowns like this in your inbox? <a href="/newsletter" data-umami-event="article-newsletter-link">Join the free newsletter →</a></p>
+<p class="fin-note">Educational only, not financial advice. Ozgnos helps you understand crypto; what you do with it is your call.</p>
+<footer>
+    <div class="l">© <span id="yr"></span> Ozgnos · Not financial advice · DYOR</div>
+    <div class="socials">
+      <a href="https://x.com/ozgnos" target="_blank" rel="noopener" data-umami-event="outbound-x" id="x-link">X / Twitter</a>
+      <a href="https://t.me/ozgnosofficial" target="_blank" rel="noopener" data-umami-event="outbound-telegram" id="tg-link">Telegram</a>
+      <a href="/newsletter" id="nl-link">Newsletter</a>
+      <a href="/disclosure">How we make money</a>
+      <a href="mailto:contact@ozgnos.com">Contact</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+  </footer>
+</div>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+document.getElementById('themeToggle').addEventListener('click', function(){
+  var root = document.documentElement;
+  var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  root.setAttribute('data-theme', next);
+  try { localStorage.setItem('ozgnos-theme', next); } catch(e){}
+});
+var navlinks = document.getElementById('navlinks');
+document.getElementById('menuToggle').addEventListener('click', function(){ navlinks.classList.toggle('open'); });
+document.querySelectorAll('#navlinks a').forEach(function(a){ a.addEventListener('click', function(){ navlinks.classList.remove('open'); }); });
+</script>
+</body>
+</html>
