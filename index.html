@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>(function(){try{var s=localStorage.getItem('ozgnos-theme');if(s==='light'||s==='dark')document.documentElement.setAttribute('data-theme',s);}catch(e){}})();</script>
-<title>Ozgnos — Making sense of crypto, one honest breakdown at a time</title>
-<meta name="description" content="Honest, jargon-free crypto breakdowns. Learning in public. Not financial advice.">
+<title>About · Ozgnos</title>
+<meta name="description" content="Who is behind Ozgnos, why it exists, and the rules we hold ourselves to. Independent, no agenda, plain English.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ozgnos">
-<meta property="og:title" content="Ozgnos — Making sense of crypto, one honest breakdown at a time">
-<meta property="og:description" content="Honest, jargon-free crypto breakdowns. Learning in public. Not financial advice.">
-<meta property="og:url" content="https://ozgnos.com/">
+<meta property="og:title" content="About · Ozgnos">
+<meta property="og:description" content="Who is behind Ozgnos, why it exists, and the rules we hold ourselves to. Independent, no agenda, plain English.">
+<meta property="og:url" content="https://ozgnos.com/about">
 <meta property="og:image" content="https://ozgnos.com/og/ozgnos.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ozgnos — Making sense of crypto, one honest breakdown at a time">
-<meta name="twitter:description" content="Honest, jargon-free crypto breakdowns. Learning in public. Not financial advice.">
+<meta name="twitter:title" content="About · Ozgnos">
+<meta name="twitter:description" content="Who is behind Ozgnos, why it exists, and the rules we hold ourselves to. Independent, no agenda, plain English.">
 <meta name="twitter:image" content="https://ozgnos.com/og/ozgnos.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -26,46 +26,49 @@
 <link rel="stylesheet" href="/style.css">
 <script defer src="/nav.js"></script>
 <style>
-/* Homepage-only additions. Base .posts / .post / .thumb styles come from
-   /style.css — don't redeclare them here (drift risk). */
-.post .thumb{position:relative} /* anchors the .pnum corner label */
-.post .thumb .picon{width:34px;height:34px;color:var(--fg-dim);transition:color .2s}
-.post:hover .thumb .picon{color:var(--blue)}
-.post .thumb .pnum{position:absolute;top:12px;left:14px;font-size:12px;color:var(--muted);letter-spacing:1px}
-.about{margin-top:60px;background:transparent;border:none;border-left:3px solid var(--gold);border-radius:0;padding:8px 0 8px 30px;max-width:720px}
-.about h2{font-family:'Fraunces',serif;font-size:26px;font-weight:500;margin-bottom:14px}
-.about p{color:var(--fg-dim);font-size:15px;line-height:1.75;max-width:640px}
-/* ---- live market bar + F&G meter + daily read + start-here ---- */
-.strip-wrap{margin-top:34px}
-.strip-head{display:flex;align-items:center;justify-content:center;gap:8px;color:var(--muted);font-size:11px;letter-spacing:2px;margin-bottom:12px}
-.livedot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 2s infinite}
-.strip{display:flex;align-items:stretch;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;max-width:680px;margin:0 auto}
-.prices{display:flex;flex:1}
-.pcell{flex:1;display:flex;flex-direction:column;gap:3px;align-items:center;justify-content:center;padding:18px 8px;border-right:1px solid var(--line)}
-.pcell .sym{color:var(--fg-dim);font-size:11px;letter-spacing:1px}
-.pcell .px{color:var(--fg);font-size:15px;font-weight:700}
-.pcell .chg{font-size:12px;font-weight:700;color:var(--muted)}
-.fgbox{display:flex;flex-direction:column;justify-content:center;gap:8px;padding:16px 20px;min-width:210px}
-.fgbox .top{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
-.fgbox .lbl{color:var(--fg-dim);font-size:11px;letter-spacing:1px;text-transform:uppercase}
-.fgbox .num{font-size:22px;font-weight:700;color:var(--muted)}
-.meter{position:relative;height:6px;border-radius:6px;background:linear-gradient(90deg,#FF5C5C,#FF9F43,#CAA24A,#9ACD55,#3FD17A)}
-.meter .marker{position:absolute;top:-3px;left:0%;width:3px;height:12px;border-radius:2px;background:var(--fg);transform:translateX(-50%);transition:left .4s ease}
-.fgbox .tag{font-size:12px;font-weight:700;letter-spacing:.5px;color:var(--muted)}
-.daily{text-align:center;max-width:560px;margin:20px auto 0}
-.daily #daily-read{font-family:'Fraunces',serif;font-style:italic;color:var(--fg-dim);font-size:16px;line-height:1.5}
-.start-sub{margin-top:8px}
-.start-sub .start-tag{color:var(--blue);font-size:11px;letter-spacing:2px;text-transform:uppercase}
-.start-sub p{color:var(--fg-dim);font-size:13px;margin-top:6px}
-@media(max-width:600px){
-  .strip{flex-direction:column}
-  .pcell:last-child{border-right:none}
-  .fgbox{border-top:1px solid var(--line);min-width:0}
+.article-body a{color:var(--blue);text-decoration:none}
+.article-body a:hover{text-decoration:underline}
+.article-hero .meta.lede{font-size:18px;color:var(--fg);font-style:italic;opacity:.92}
+
+/* hero accent */
+.article-hero h1{position:relative}
+.article-hero h1::after{content:"";display:block;width:56px;height:3px;margin-top:16px;border-radius:3px;background:linear-gradient(90deg,var(--gold),transparent)}
+
+/* section headings get a gold marker */
+.article-body h2{position:relative;padding-left:18px;margin-top:46px}
+.article-body h2::before{content:"";position:absolute;left:0;top:.1em;bottom:.1em;width:4px;border-radius:3px;background:var(--gold)}
+
+/* featured intro card */
+.about-card{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:14px;padding:22px 24px;margin-top:8px;box-shadow:0 12px 32px rgba(0,0,0,.14)}
+.about-card p{margin:0}
+.about-card strong{color:var(--gold)}
+.article-body .signoff{font-family:'Space Mono',monospace;color:var(--gold);font-size:14px;margin:16px 0 0}
+.article-body .signoff .signoff-role{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+
+/* rules as marked cards */
+.rules{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:10px}
+.rules li{position:relative;padding:14px 18px 14px 48px;background:var(--surface);border:1px solid var(--line);border-radius:12px;transition:border-color .15s ease,transform .15s ease}
+.rules li:hover{border-color:var(--gold);transform:translateY(-1px)}
+.rules li::before{content:"✓";position:absolute;left:18px;top:14px;color:var(--green);font-weight:700;font-family:'Space Mono',monospace}
+.rules li strong{color:var(--fg)}
+@media(max-width:780px){
+  .menu-toggle{display:inline-flex}
+  .navlinks{
+    display:none;position:absolute;top:calc(100% - 6px);left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:4px;
+    background:var(--surface);border:1px solid var(--line);border-radius:12px;
+    padding:10px;z-index:30;box-shadow:0 12px 30px rgba(0,0,0,.25)
+  }
+  .navlinks.open{display:flex}
+  .navlinks a{font-size:15px;padding:11px 12px;border-radius:8px}
+  .navlinks a:hover{background:var(--bg2);color:var(--fg)}
+  .navlinks .theme-toggle{align-self:flex-start;margin-top:2px}
+  .article-hero h1{font-size:30px}
 }
 </style>
 <script defer src="https://analytics.ozgnos.com/script.js" data-website-id="f2d52f8f-84c6-47b9-b4ff-22d0c1a70944"></script>
-<link rel="canonical" href="https://ozgnos.com/">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "Ozgnos", "url": "https://ozgnos.com/", "description": "Honest, jargon-free crypto breakdowns. Learning in public. Not financial advice.", "inLanguage": "en", "publisher": {"@type": "Organization", "name": "Ozgnos", "url": "https://ozgnos.com/", "logo": "https://ozgnos.com/apple-touch-icon.png"}}, {"@type": "Organization", "name": "Ozgnos", "url": "https://ozgnos.com/", "logo": "https://ozgnos.com/apple-touch-icon.png"}]}</script>
+<link rel="canonical" href="https://ozgnos.com/about">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "About · Ozgnos", "description": "Who is behind Ozgnos, why it exists, and the rules we hold ourselves to. Independent, no agenda, plain English.", "url": "https://ozgnos.com/about", "inLanguage": "en", "publisher": {"@type": "Organization", "name": "Ozgnos", "url": "https://ozgnos.com/", "logo": "https://ozgnos.com/apple-touch-icon.png"}}</script>
 </head>
 <body>
 <div class="grid-bg"></div>
@@ -73,9 +76,8 @@
 <symbol id="logo" viewBox="94 104 210 193">
   <path fill-rule="evenodd" fill="currentColor" d="M159.962860,125.496872 C159.029373,125.853149 158.089172,126.192841 157.163391,126.568100 C120.783546,141.314377 100.579056,178.711884 108.249306,217.134079 C115.546051,253.685394 148.517197,280.426819 183.490021,280.798706 C186.019424,280.825592 188.252838,280.866394 189.828354,283.628815 C192.725204,288.707947 197.483887,290.720642 203.270081,290.637878 C214.226883,290.481140 224.623306,287.920776 234.820511,284.011597 C273.555847,269.161896 297.927887,224.375778 289.122620,183.956955 C280.351105,143.693085 250.099274,116.341080 208.872330,111.567314 C201.013657,110.657349 193.372513,110.859482 189.036346,119.338509 C187.922882,121.515800 185.659271,121.183983 183.695648,121.186821 C175.789185,121.198242 168.155457,122.675713 159.962860,125.496872 z M183.955368,255.361206 C156.399033,252.359436 138.291016,235.978577 133.102997,209.752762 C127.529404,181.577850 148.463196,151.895233 176.897873,147.609100 C180.188950,147.113007 183.452393,146.619064 186.805878,146.582474 C191.698288,146.529083 195.393448,144.084534 197.793884,139.905441 C199.138794,137.563965 200.840012,136.782013 203.508011,136.980621 C234.870667,139.315216 258.152344,159.310165 263.889038,190.037964 C270.518951,225.550079 245.268875,260.519745 208.132217,264.480164 C203.059250,265.021179 199.072601,265.321350 195.925247,259.982971 C193.670212,256.158112 189.013779,255.021378 183.955368,255.361206 z"/>
 </symbol></defs></svg>
-
 <div class="wrap">
-  <nav class="site-nav">
+<nav class="site-nav">
     <a class="brand" href="/"><svg><use href="#logo"/></svg><span class="nm">Ozgnos</span></a>
     <div class="navlinks" id="navlinks">
       <a href="/library">Library</a>
@@ -92,182 +94,69 @@
     </button>
   </nav>
 
-  <section class="hero">
-    <div class="eyebrow">Crypto · Tools &amp; Clear Breakdowns</div>
-    <h1>Crypto you can <em>actually</em> understand.</h1>
-    <p>Without the hype, the jargon, or the agenda.</p>
-    <div class="cta">
-      <a href="/library" class="btn-primary" data-umami-event="cta-start-learning">Start learning free →</a>
-      <a href="/markets" class="btn-ghost" data-umami-event="cta-live-markets">Live markets →</a>
-    </div>
-  </section>
+<section class="article-hero">
+  <a class="back" href="/">← Home</a>
+  <h1>About Ozgnos</h1>
+  <div class="meta lede">The who, the why, and the rules we hold ourselves to.</div>
+</section>
+<article class="article-body">
 
-  <section class="strip-wrap">
-    <div class="strip-head"><span class="livedot"></span>LIVE</div>
-    <div class="strip">
-      <div class="prices">
-        <div class="pcell"><span class="sym">BTC</span><span class="px" id="px-btc">…</span><span class="chg" id="chg-btc"></span></div>
-        <div class="pcell"><span class="sym">ETH</span><span class="px" id="px-eth">…</span><span class="chg" id="chg-eth"></span></div>
-        <div class="pcell"><span class="sym">DOGE</span><span class="px" id="px-doge">…</span><span class="chg" id="chg-doge"></span></div>
-      </div>
-      <div class="fgbox">
-        <div class="top"><span class="lbl">Fear &amp; Greed</span><span class="num" id="fg-num">…</span></div>
-        <div class="meter"><div class="marker" id="fg-marker"></div></div>
-        <div class="tag" id="fg-tag"></div>
-      </div>
-    </div>
-    <div class="daily"><span id="daily-read">Reading the market…</span></div>
-  </section>
+<!-- ===================================================================
+     KIŞİSELLEŞTİR: Aşağıdaki "Who's behind this" bölümüne kendinden
+     bahseden 2-3 cümle ekle (isim/takma isim, arka plan, neden krypto).
+     Geri kalan bölümler yayına hazır; istediğin gibi düzenle.
+     =================================================================== -->
 
-  <section id="posts" style="margin-top:74px">
-    <div class="section-label">
-      <span class="dot" style="background:var(--blue);box-shadow:0 0 9px var(--blue)"></span>
-      <h2>Start Here</h2>
-    </div>
-    <div class="start-sub"><span class="start-tag">THE FOUNDATIONS</span><p>New to crypto? Then you're in the right place — plain English, no assumptions.</p></div>
-    <div class="posts" style="margin-top:18px">
-      <a class="post" href="/library/what-is-cryptocurrency"><div class="thumb"><span class="pnum">01</span><svg class="picon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></svg></div><div class="body"><div class="date">FOUNDATIONS</div><div class="ttl">What Is Cryptocurrency?</div><div class="ex">Start from zero — what it actually is, and why it exists.</div></div></a>
-      <a class="post" href="/library/what-is-blockchain"><div class="thumb"><span class="pnum">02</span><svg class="picon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><div class="body"><div class="date">FOUNDATIONS</div><div class="ttl">Blockchain, Explained Simply</div><div class="ex">A shared notebook everyone can see but no one can erase.</div></div></a>
-      <a class="post" href="/library/seed-phrase"><div class="thumb"><span class="pnum">03</span><svg class="picon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div class="body"><div class="date">SECURITY</div><div class="ttl">What a "Seed Phrase" Actually Is</div><div class="ex">The one security rule that can cost you everything.</div></div></a>
-    </div>
-  </section>
+<h2>What Ozgnos is</h2>
+<p>Ozgnos is an independent crypto education site. It exists to do one thing well: explain crypto in plain English — what things are, how they work, and how to stay safe — without the hype, the jargon, or a hidden sales pitch.</p>
+<p>No venture capital, no exchange behind it, no token to pump. Just lessons, live market data presented as education, and a free newsletter.</p>
 
-  <section class="about" id="about">
-    <h2>Why Ozgnos?</h2>
-    <p>Crypto is full of people who profit when you're confused. We'd rather you understood it. Plain-English breakdowns, honest analysis, sources you can check — and a clear line between what's fact and what's just our take. <a href="/about" style="color:var(--blue);text-decoration:none">More about Ozgnos →</a></p>
-  </section>
+<h2>Who's behind this</h2>
+<div class="about-card">
+<p><strong>Ozgnos is a one-person project — no exchange, no fund, no boss.</strong> It has watched a few cycles come and go: the euphoria, the crashes, the influencers who vanish when the chart turns red. None of it is new, and that calm is the whole point. Most crypto content is written by people who profit when you're confused — exchanges selling volume, influencers selling their bags, courses selling shortcuts. Ozgnos sells none of that. The goal is simple: help you understand this well enough to know when to say no.</p>
+<p class="signoff">— Seth<span class="signoff-role">Founder · Ozgnos</span></p>
+</div>
 
-  <section class="sub" id="subscribe">
-    <h2>Get the next breakdown in your inbox.</h2>
-    <p>Honest, jargon-free crypto. A few times a week. Free.</p>
-    <!-- Subscribes via /api/subscribe → self-hosted Listmonk (AJAX, stays on page).
-         The "website" field is a honeypot: hidden from humans, bots fill it. -->
-    <form class="subform" id="subform-home">
-      <label class="sr-only" for="email-home">Email address</label>
-      <input type="email" id="email-home" name="email" placeholder="your@email.com" required>
-      <input class="hp-field" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0;pointer-events:none">
-      <button type="submit">Subscribe</button>
-    </form>
-    <div class="disc" id="submsg-home">By subscribing you agree to receive the Ozgnos newsletter.</div>
-  </section>
+<h2>Why trust us over an exchange's academy?</h2>
+<p>Because we don't make money when you trade. An exchange's learning hub exists, ultimately, to turn readers into traders. Ozgnos has no trading product to sell you — which means we can tell you when <em>not</em> to do something, and we often will.</p>
 
-  <footer>
+<h2>The rules we hold ourselves to</h2>
+<ul class="rules">
+<li><strong>Education, never advice.</strong> Nothing on this site tells you to buy or sell anything. Ever.</li>
+<li><strong>A clear line between fact and take.</strong> When something is our opinion, we say so.</li>
+<li><strong>Sources you can check.</strong> We'd rather you verify than believe.</li>
+<li><strong>Full transparency on money.</strong> If we ever recommend a product through a referral link, we'll say so right where the link is — and a referral will never change what we write.</li>
+<li><strong>Honest about risk.</strong> Crypto can go to zero. Anyone who skips that part is selling you something.</li>
+</ul>
+
+<h2>Contact</h2>
+<p>Email <a href="mailto:contact@ozgnos.com">contact@ozgnos.com</a>, or find us on <a href="https://x.com/ozgnos" target="_blank" rel="noopener" data-umami-event="outbound-x">X</a> and <a href="https://t.me/ozgnosofficial" target="_blank" rel="noopener" data-umami-event="outbound-telegram">Telegram</a>.</p>
+</article>
+
+<footer>
     <div class="l">© <span id="yr"></span> Ozgnos · Not financial advice · DYOR</div>
     <div class="socials">
-      <a href="https://x.com/ozgnos" target="_blank" rel="noopener" data-umami-event="outbound-x" id="x-link">X / Twitter</a>
-      <a href="https://t.me/ozgnosofficial" target="_blank" rel="noopener" data-umami-event="outbound-telegram" id="tg-link">Telegram</a>
-      <a href="/newsletter" id="nl-link">Newsletter</a>
+      <a href="https://x.com/ozgnos" target="_blank" rel="noopener" data-umami-event="outbound-x">X / Twitter</a>
+      <a href="https://t.me/ozgnosofficial" target="_blank" rel="noopener" data-umami-event="outbound-telegram">Telegram</a>
+      <a href="/newsletter">Newsletter</a>
       <a href="/disclosure">How we make money</a>
       <a href="mailto:contact@ozgnos.com">Contact</a>
       <a href="/privacy">Privacy</a>
     </div>
   </footer>
 </div>
-
 <script>
-// year
 document.getElementById('yr').textContent = new Date().getFullYear();
-
-// theme toggle
 document.getElementById('themeToggle').addEventListener('click', function(){
   var root = document.documentElement;
   var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
   root.setAttribute('data-theme', next);
   try { localStorage.setItem('ozgnos-theme', next); } catch(e){}
 });
-
-// mobile menu
 var navlinks = document.getElementById('navlinks');
 document.getElementById('menuToggle').addEventListener('click', function(){
   navlinks.classList.toggle('open');
 });
-document.querySelectorAll('#navlinks a').forEach(function(a){
-  a.addEventListener('click', function(){ navlinks.classList.remove('open'); });
-});
-
-// ---- live market bar + F&G meter + daily read ----
-(function(){
-  function money(n){ if(!isFinite(n))return '—'; if(n>=1000)return '$'+Math.round(n).toLocaleString('en-US'); if(n>=1)return '$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}); return '$'+n.toLocaleString('en-US',{maximumFractionDigits:4}); }
-  function pct(n){ return (isFinite(n)?((n>=0?'+':'')+n.toFixed(2)):'—')+'%'; }
-  function fgColor(v){ if(v>=75)return 'var(--green)'; if(v>=55)return '#9ACD55'; if(v>=45)return 'var(--gold)'; if(v>=25)return '#FF9F43'; return 'var(--red)'; }
-  var ASSETS=[['bitcoin','btc'],['ethereum','eth'],['dogecoin','doge']];
-  var prices={}, fg=null, fgLabel='', pricesDone=false;
-  function fillTick(key,p,ch){
-    var pe=document.getElementById('px-'+key), ce=document.getElementById('chg-'+key);
-    if(pe) pe.textContent=money(p);
-    if(ce){ ce.textContent=pct(ch); ce.style.color=(ch==null)?'var(--muted)':(ch>=0?'var(--green)':'var(--red)'); }
-  }
-  function writeDaily(){
-    if(!pricesDone) return;
-    var el=document.getElementById('daily-read'); if(!el)return;
-    var btc=prices['bitcoin'];
-    if(!btc){ el.textContent='Live data is temporarily unavailable.'; return; }
-    var parts=[];
-    if(btc.ch==null) parts.push('Bitcoin is holding steady over 24h');
-    else parts.push('Bitcoin is '+(btc.ch>=0?'up ':'down ')+Math.abs(btc.ch).toFixed(1)+'% over 24h');
-    if(fg!=null) parts.push('the market mood is '+(fgLabel||'').toLowerCase()+' ('+fg+'/100)');
-    el.textContent=parts.join(', ')+'.';
-  }
-  fetch('/api/cg?path='+encodeURIComponent('/simple/price?ids=bitcoin,ethereum,dogecoin&vs_currencies=usd&include_24hr_change=true'))
-    .then(function(r){return r.json();})
-    .then(function(j){
-      ASSETS.forEach(function(a){ var d=j[a[0]]; if(d){ prices[a[0]]={p:d.usd,ch:d.usd_24h_change}; fillTick(a[1],d.usd,d.usd_24h_change); } });
-      pricesDone=true; writeDaily();
-    })
-    .catch(function(){ ['btc','eth','doge'].forEach(function(k){ fillTick(k,NaN,null); }); pricesDone=true; writeDaily(); });
-  fetch('/api/fng')
-    .then(function(r){if(!r.ok)throw new Error('fng');return r.json();})
-    .then(function(j){
-      if(j.data&&j.data[0]){
-        fg=parseInt(j.data[0].value,10); fgLabel=j.data[0].value_classification||'';
-        var num=document.getElementById('fg-num'); if(num){ num.textContent=fg; num.style.color=fgColor(fg); }
-        var mk=document.getElementById('fg-marker'); if(mk) mk.style.left=fg+'%';
-        var tg=document.getElementById('fg-tag'); if(tg){ tg.textContent=fgLabel; tg.style.color=fgColor(fg); }
-      }
-      writeDaily();
-    })
-    .catch(function(){ var n=document.getElementById('fg-num'); if(n) n.textContent='—'; var tg=document.getElementById('fg-tag'); if(tg) tg.textContent='unavailable'; writeDaily(); });
-})();
-
-// AJAX newsletter subscribe — keeps the visitor on the page.
-// Sends a page-load timestamp + honeypot value so /api/subscribe can drop bots.
-(function(){
-  var loadedAt = Date.now();
-  function wire(formId, msgId, defaultMsg){
-    var form = document.getElementById(formId);
-    var msg = document.getElementById(msgId);
-    if(!form || !msg) return;
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      var input = form.querySelector('input[type=email]');
-      var hp = form.querySelector('input[name=website]');
-      var btn = form.querySelector('button');
-      var email = (input.value||'').trim();
-      if(!email) return;
-      btn.disabled = true; btn.textContent = '…';
-      fetch('/api/subscribe', {
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({email: email, ts: loadedAt, website: hp ? hp.value : ''})
-      })
-      .then(function(r){ if(!r.ok) throw new Error('fail'); return r.json(); })
-      .then(function(){
-        if (typeof umami !== 'undefined' && umami.track) { try { umami.track('subscribe', { page: location.pathname }); } catch(err){} }
-        form.style.display = 'none';
-        msg.textContent = "You're in. Welcome aboard — the next breakdown lands in your inbox.";
-        msg.style.color = 'var(--green)';
-      })
-      .catch(function(){
-        btn.disabled = false; btn.textContent = 'Subscribe';
-        msg.textContent = "Something went wrong — please try again in a moment.";
-        msg.style.color = 'var(--red)';
-        setTimeout(function(){ msg.textContent = defaultMsg; msg.style.color=''; }, 10000);
-      });
-    });
-  }
-  wire('subform-home','submsg-home','By subscribing you agree to receive the Ozgnos newsletter. No spam, unsubscribe anytime.');
-  wire('subform-nl','submsg-nl','By subscribing you agree to receive the Ozgnos newsletter. No spam, unsubscribe anytime.');
-})();
 </script>
 </body>
 </html>
