@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var s=localStorage.getItem('ozgnos-theme');if(s==='light'||s==='dark')document.documentElement.setAttribute('data-theme',s);}catch(e){}})();</script>
+<title>What Is a Bridge? (And Why the Biggest Hacks Happen There) · Ozgnos</title>
+<meta name="description" content="Blockchains can't talk to each other, so bridges move value between them — by locking coins on one side and minting IOUs on the other. Useful, and the site of crypto's biggest thefts.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Ozgnos">
+<meta property="og:title" content="What Is a Bridge? (And Why the Biggest Hacks Happen There)">
+<meta property="og:description" content="Blockchains can't talk to each other, so bridges move value between them — by locking coins on one side and minting IOUs on the other. Useful, and the site of crypto's biggest thefts.">
+<meta property="og:url" content="https://ozgnos.com/library/what-is-a-bridge">
+<meta property="og:image" content="https://ozgnos.com/og/what-is-a-bridge.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Is a Bridge? (And Why the Biggest Hacks Happen There)">
+<meta name="twitter:description" content="Blockchains can't talk to each other, so bridges move value between them — by locking coins on one side and minting IOUs on the other. Useful, and the site of crypto's biggest thefts.">
+<meta name="twitter:image" content="https://ozgnos.com/og/what-is-a-bridge.png">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script defer src="/nav.js"></script>
+<script defer src="https://analytics.ozgnos.com/script.js" data-website-id="f2d52f8f-84c6-47b9-b4ff-22d0c1a70944"></script>
+<link rel="canonical" href="https://ozgnos.com/library/what-is-a-bridge">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": ["Article", "LearningResource"], "headline": "What Is a Bridge? (And Why the Biggest Hacks Happen There)", "description": "Blockchains can't talk to each other, so bridges move value between them — by locking coins on one side and minting IOUs on the other. Useful, and the site of crypto's biggest thefts.", "url": "https://ozgnos.com/library/what-is-a-bridge", "image": "https://ozgnos.com/og/what-is-a-bridge.png", "inLanguage": "en", "isAccessibleForFree": true, "datePublished": "2026-06-11", "dateModified": "2026-06-11", "author": {"@type": "Organization", "name": "Ozgnos", "url": "https://ozgnos.com/", "logo": "https://ozgnos.com/apple-touch-icon.png"}, "publisher": {"@type": "Organization", "name": "Ozgnos", "url": "https://ozgnos.com/", "logo": "https://ozgnos.com/apple-touch-icon.png"}, "educationalLevel": "Beginner", "about": "Cryptocurrency"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ozgnos.com/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://ozgnos.com/library"}, {"@type": "ListItem", "position": 3, "name": "What Is a Bridge? (And Why the Biggest Hacks Happen There)", "item": "https://ozgnos.com/library/what-is-a-bridge"}]}]}</script>
+</head>
+<body>
+<div class="grid-bg"></div>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="logo" viewBox="0 0 340 200">
+  <g fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M150 30 L74 172 L226 172 Z" stroke="currentColor" stroke-width="14"/>
+    <line x1="6" y1="130" x2="332" y2="130" stroke="currentColor" stroke-width="13"/>
+    <line x1="196" y1="130" x2="335" y2="74" stroke="#F2941E" stroke-width="13"/>
+    <line x1="196" y1="130" x2="335" y2="172" stroke="#F2941E" stroke-width="13"/>
+  </g>
+</symbol></defs></svg>
+<div class="wrap">
+<nav class="site-nav">
+    <a class="brand" href="/"><svg><use href="#logo"/></svg><span class="nm">Ozgnos</span></a>
+    <div class="navlinks" id="navlinks">
+      <a href="/library">Library</a>
+      <a href="/markets">Markets</a>
+      <a href="/newsletter">Newsletter</a>
+      <a href="/about">About</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+<section class="article-hero"><a class="back" href="/library">← All lessons</a><div class="eyebrow">How It Works</div><h1>What Is a Bridge? (And Why the Biggest Hacks Happen There)</h1><div class="meta">5 min read</div></section>
+<article class="article-body"><p><a href="/library/networks-and-layers">The networks lesson</a> left you with a multi-chain world: Ethereum, its layers, and a crowd of other blockchains, each with its own coins and apps. What it didn't mention is an awkward fact about that world: <strong>blockchains can't talk to each other.</strong> Each one is a sealed room — Bitcoin's ledger has no idea Ethereum exists, and your ETH cannot simply travel to another chain the way an email crosses providers. So how does value move between rooms? Through <strong>bridges</strong> — and bridges are simultaneously one of crypto's most useful inventions and the scene of its largest thefts. Both halves of that sentence deserve your attention.</p>
+
+<h2>How a bridge actually works: the cloakroom</h2>
+<p>A bridge can't literally move a coin between chains — coins can't leave their ledger. What it does instead is a swap of promises. Think of a cloakroom: you hand over your coat, you get a numbered ticket, and the ticket is redeemable for the coat later. A bridge does this with coins. You send your ETH to the bridge on Ethereum, where it gets <strong>locked</strong> in <a href="/library/what-is-ethereum">a smart contract</a>. The bridge then <strong>mints</strong> an equivalent "wrapped" token for you on the destination chain — a ticket that says "redeemable for one real ETH back on Ethereum." Go back the other way and the process reverses: the wrapped token is burned, the original is unlocked.</p>
+<p>Read that again with <a href="/library/what-is-an-exchange">exchange-lesson</a> eyes and you'll recognize the structure: <strong>a wrapped token is an IOU.</strong> The "bitcoin" you might hold on Ethereum (wrapped BTC) is only worth a bitcoin while the locked original verifiably exists and the redemption mechanism works. The ticket has value because the cloakroom is trustworthy — and only because of that.</p>
+
+<h2>Why the biggest hacks happen exactly here</h2>
+<p>Now picture the cloakroom from a thief's perspective. Everything everyone has deposited — all of it — sits in one place: the bridge's locked contracts. Bridges concentrate enormous value behind a single point of failure, which makes them the most attractive target in all of crypto. And it gets worse, for two reasons:</p>
+<ul>
+<li><strong>The code is unusually hard to get right.</strong> A bridge must reliably observe events on one chain and act on another — two systems with different rules that were never designed to cooperate. More complexity means more surface for the kind of <a href="/library/what-is-defi">contract exploits</a> that execute as faithfully as features do. Several of the worst incidents were one overlooked flaw: a bridge tricked into minting tickets for coats that were never deposited.</li>
+<li><strong>Many bridges quietly reintroduce trust.</strong> Some are secured not by the blockchains themselves but by a small group of validator keys — and stealing a handful of keys is a very different problem from attacking a whole network. The largest bridge hack to date worked exactly this way: attackers compromised five of nine validator keys and walked out with roughly $600 million. Other nine-figure bridge thefts have followed similar patterns. The two biggest thefts in DeFi history were both bridges, and that is not a coincidence — it's the architecture.</li>
+</ul>
+<p>When a bridge is drained, here's the part that matters for you: the wrapped tokens keep existing, but the coats behind them are gone. Tickets to an empty cloakroom. Holders aren't "hacked" personally — their asset is simply hollowed out, <a href="/library/stablecoins-explained">the same way a stablecoin is only as good as what backs it</a>.</p>
+
+<h2>If you ever need to cross</h2>
+<p>For most beginners, the honest answer is that you won't need a bridge for a long time — moving between chains is a power-user activity, and <a href="/library/what-is-an-exchange">exchanges</a> often route around it (withdraw on the destination chain directly, where supported, and <a href="/library/transactions-fees-gas">mind the network you select</a>). If the day comes: prefer long-established, heavily used routes over whatever's newest and cheapest; send a small test amount first — the same test-first habit from <a href="/library/how-to-buy-your-first-crypto">your first purchase</a>; don't leave value sitting in wrapped form longer than the task requires; and treat any unsolicited "bridge assistance" exactly as <a href="/library/common-crypto-scams">the scams lesson</a> taught you to treat all unsolicited help.</p>
+
+<h2>The takeaway</h2>
+<p>Bridges move value between sealed worlds by locking the original and minting an IOU on the other side — a cloakroom ticket whose worth depends entirely on the cloakroom. That design concentrates treasure behind complex code and, often, a handful of keys, which is why crypto's biggest thefts keep happening at exactly this spot. Use established routes rarely and briefly, test first, and never forget what a wrapped token is: a promise, held together by whatever holds the bridge together.</p></article>
+<a class="next-up" href="/library/how-to-read-market-data"><span class="next-label">Next up →</span><span class="next-title">How to read market data</span></a>
+<p class="nl-line">Want breakdowns like this in your inbox? <a href="/newsletter" data-umami-event="article-newsletter-link">Join the free newsletter →</a></p>
+<footer>
+    <div class="l">© <span id="yr"></span> Ozgnos · Not financial advice · DYOR</div>
+    <div class="socials">
+      <a href="https://x.com/ozgnos" target="_blank" rel="noopener" data-umami-event="outbound-x" id="x-link">X / Twitter</a>
+      <a href="https://t.me/ozgnosofficial" target="_blank" rel="noopener" data-umami-event="outbound-telegram" id="tg-link">Telegram</a>
+      <a href="/newsletter" id="nl-link">Newsletter</a>
+      <a href="/disclosure">How we make money</a>
+      <a href="https://ko-fi.com/ozgnos" target="_blank" rel="noopener" data-umami-event="outbound-support">Buy us a coffee</a>
+      <a href="mailto:contact@ozgnos.com">Contact</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+  </footer>
+</div>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+document.getElementById('themeToggle').addEventListener('click', function(){
+  var root = document.documentElement;
+  var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  root.setAttribute('data-theme', next);
+  try { localStorage.setItem('ozgnos-theme', next); } catch(e){}
+});
+var navlinks = document.getElementById('navlinks');
+document.getElementById('menuToggle').addEventListener('click', function(){ navlinks.classList.toggle('open'); });
+document.querySelectorAll('#navlinks a').forEach(function(a){ a.addEventListener('click', function(){ navlinks.classList.remove('open'); }); });
+</script>
+</body>
+</html>
