@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var s=localStorage.getItem('ozgnos-theme');if(s==='light'||s==='dark')document.documentElement.setAttribute('data-theme',s);}catch(e){}})();</script>
+<title>Tools — Ozgnos</title>
+<meta name="description" content="Free, honest crypto tools. A scam-warning-sign checker and a position-size risk calculator. No wallet connection — we only ask for numbers, never your keys.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ozgnos">
+<meta property="og:title" content="Tools — Ozgnos">
+<meta property="og:description" content="Free, honest crypto tools. A scam checker and a position-size risk calculator. No wallet connection — we only ask for numbers, never your keys.">
+<meta property="og:url" content="https://ozgnos.com/tools">
+<meta property="og:image" content="https://ozgnos.com/og/ozgnos.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tools — Ozgnos">
+<meta name="twitter:description" content="Free, honest crypto tools. No wallet connection — we only ask for numbers, never your keys.">
+<meta name="twitter:image" content="https://ozgnos.com/og/ozgnos.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script defer src="/nav.js"></script>
+<style>
+/* Tools-page additions. Base layout/nav/hero/.btn-primary come from /style.css —
+   don't redeclare them here (drift risk). Everything below is scoped. */
+.tools-hero{padding-bottom:8px}
+.tools-hero .eyebrow .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);margin-right:7px;vertical-align:middle}
+.tool{margin-top:62px}
+.tool-intro{color:var(--fg-dim);font-size:15px;line-height:1.7;max-width:670px;margin:6px 0 22px}
+
+/* ---- shared card chrome ---- */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;max-width:760px}
+
+/* ---- scam checklist ---- */
+.cl-head{font-family:'Space Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);padding:16px 20px 8px;border-top:1px solid var(--line)}
+.cl-head:first-child{border-top:none}
+.cl-item{display:flex;gap:13px;padding:13px 20px;cursor:pointer;align-items:flex-start;transition:background .15s}
+.cl-item:hover{background:rgba(127,127,127,.05)}
+.cl-item input{appearance:auto;accent-color:var(--blue);width:17px;height:17px;margin-top:2px;flex-shrink:0;cursor:pointer}
+.cl-item .cl-text{font-size:14.5px;line-height:1.55;color:var(--fg-dim)}
+.cl-item input:checked + .cl-text{color:var(--fg)}
+
+.verdict{margin-top:22px;border:1px solid var(--line);border-left:4px solid var(--muted);border-radius:12px;padding:20px 22px;background:var(--surface);max-width:760px;transition:border-left-color .25s}
+.verdict h3{font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin-bottom:7px;color:var(--fg)}
+.verdict .v-sub{color:var(--fg-dim);font-size:14px;line-height:1.6}
+.verdict .flags{margin-top:16px;display:flex;flex-direction:column;gap:11px}
+.verdict .flag{display:flex;gap:10px;font-size:13.5px;color:var(--fg-dim);line-height:1.5}
+.verdict .flag .fi{color:var(--gold);flex-shrink:0;font-weight:700}
+.goldenrule{margin-top:20px;color:var(--fg-dim);font-size:14px;line-height:1.7;border-left:3px solid var(--gold);padding-left:18px;max-width:660px}
+.goldenrule b{color:var(--fg)}
+
+/* ---- position-size calculator ---- */
+.calc{max-width:560px;padding:24px}
+.calc .field{margin-bottom:16px}
+.calc .field:last-of-type{margin-bottom:0}
+.calc label{display:block;font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.5px;color:var(--fg-dim);margin-bottom:7px}
+.calc .inwrap{position:relative}
+.calc .inwrap .affix{position:absolute;top:50%;transform:translateY(-50%);color:var(--muted);font-family:'Space Mono',monospace;font-size:14px;pointer-events:none}
+.calc .inwrap .affix.pre{left:14px}
+.calc .inwrap .affix.suf{right:14px}
+.calc input{width:100%;background:transparent;border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--fg);font-family:'Space Mono',monospace;font-size:15px;transition:border-color .15s}
+.calc input.haspre{padding-left:26px}
+.calc input.hassuf{padding-right:30px}
+.calc input:focus{outline:none;border-color:var(--blue)}
+.calc-out{margin-top:20px;border-top:1px dashed var(--line);padding-top:18px;display:grid;gap:13px}
+.calc-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.calc-row .k{color:var(--fg-dim);font-size:13.5px}
+.calc-row .v{font-family:'Space Mono',monospace;font-weight:700;font-size:16px;color:var(--fg);text-align:right}
+.calc-row.primary{border-top:1px solid var(--line);padding-top:13px;margin-top:2px}
+.calc-row.primary .k{color:var(--fg)}
+.calc-row.primary .v{color:var(--blue);font-size:21px}
+.calc-note{margin-top:16px;color:var(--muted);font-size:12.5px;line-height:1.6;max-width:560px}
+.calc-warn{margin-top:14px;color:var(--gold);font-size:13px;line-height:1.55;display:none}
+.calc-err{margin-top:14px;color:var(--red);font-size:13.5px;display:none}
+
+/* ---- more tools ---- */
+.more-tools{margin-top:62px;color:var(--muted);font-size:14px;line-height:1.7;max-width:640px}
+.more-tools a{color:var(--blue);text-decoration:none}
+.more-tools a:hover{text-decoration:underline}
+
+@media(max-width:600px){
+  .calc{padding:20px}
+  .cl-item{padding:13px 16px}
+}
+</style>
+<script defer src="https://analytics.ozgnos.com/script.js" data-website-id="f2d52f8f-84c6-47b9-b4ff-22d0c1a70944"></script>
+<link rel="canonical" href="https://ozgnos.com/tools">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Tools — Ozgnos","url":"https://ozgnos.com/tools","description":"Free, honest crypto tools. A scam-warning-sign checker and a position-size risk calculator. No wallet connection.","isPartOf":{"@type":"WebSite","name":"Ozgnos","url":"https://ozgnos.com/"}}</script>
+</head>
+<body>
+<div class="grid-bg"></div>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="logo" viewBox="0 0 340 200">
+  <g fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M150 30 L74 172 L226 172 Z" stroke="currentColor" stroke-width="14"/>
+    <line x1="6" y1="130" x2="332" y2="130" stroke="currentColor" stroke-width="13"/>
+    <line x1="196" y1="130" x2="335" y2="74" stroke="#F2941E" stroke-width="13"/>
+    <line x1="196" y1="130" x2="335" y2="172" stroke="#F2941E" stroke-width="13"/>
+  </g>
+</symbol></defs></svg>
+
+<div class="wrap">
+  <nav class="site-nav">
+    <a class="brand" href="/"><svg><use href="#logo"/></svg><span class="nm">Ozgnos</span></a>
+    <div class="navlinks" id="navlinks">
+      <a href="/library">Library</a>
+      <a href="/markets">Markets</a>
+      <a href="/tools" aria-current="page">Tools</a>
+      <a href="/newsletter">Newsletter</a>
+      <a href="/about">About</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+
+  <section class="hero tools-hero">
+    <div class="eyebrow"><span class="dot"></span>Free tools · No wallet connection, ever</div>
+    <h1>Tools, not <em>traps</em>.</h1>
+    <p>Quick, honest tools that ask for numbers — never your keys, never a "connect wallet" button.</p>
+  </section>
+
+  <!-- ================= TOOL 1: SCAM CHECKER ================= -->
+  <section class="tool" id="scam-check">
+    <div class="section-label">
+      <span class="dot" style="background:var(--gold);box-shadow:0 0 9px var(--gold)"></span>
+      <h2>Is this a scam?</h2>
+    </div>
+    <p class="tool-intro">Tick whatever is true about the project you're looking at. This isn't a verdict — it surfaces the warning signs the crypto world sees most often. The final call is always yours, and nothing here is financial advice.</p>
+
+    <div class="card" id="checklist">
+      <div class="cl-head">Walk away immediately</div>
+      <label class="cl-item"><input type="checkbox" data-w="100" data-flag="They want your keys. No legitimate project ever asks for your seed phrase or to &quot;connect&quot; to claim something. This alone is enough to stop."><span class="cl-text">It asks for your seed phrase / private key, or to "connect your wallet" to claim, verify, or unlock something.</span></label>
+      <label class="cl-item"><input type="checkbox" data-w="6" data-flag="Guaranteed returns don't exist in crypto. Anyone promising them is selling a story, not an investment."><span class="cl-text">It promises guaranteed or fixed returns — "1% a day", "risk-free", "can't lose".</span></label>
+      <label class="cl-item"><input type="checkbox" data-w="5" data-flag="Deposits work but withdrawals don't — and you're asked to pay a &quot;fee&quot; or &quot;tax&quot; first. This is the classic exit-scam tell."><span class="cl-text">You can deposit, but withdrawals are blocked, delayed, or need an upfront "fee" or "tax".</span></label>
+
+      <div class="cl-head">Serious warning signs</div>
+      <label class="cl-item"><input type="checkbox" data-w="3" data-flag="Recruit-to-earn is the structure of a pyramid. The people who join last always lose."><span class="cl-text">You mainly earn by recruiting other people in.</span></label>
+      <label class="cl-item"><input type="checkbox" data-w="3" data-flag="Real opportunities don't expire in ten minutes. Urgency is a manipulation tool, not a feature."><span class="cl-text">Heavy pressure to act now — countdowns, "limited spots", fear of missing out.</span></label>
+      <label class="cl-item"><input type="checkbox" data-w="3" data-flag="If they can't clearly explain where the returns come from, assume they come from the next person's deposit."><span class="cl-text">No clear, honest explanation of where the returns actually come from.</span></label>
+      <label class="cl-item"><input type="checkbox" data-w="2" data-flag="An anonymous, unverifiable team has nothing to lose by disappearing with your money."><span class="cl-text">Anonymous team you can't verify, with no real track record.</span></label>
+      <label class="cl-item"><input type="checkbox" data-w="2" data-flag="Random DMs, surprise group adds, and paid influencer hype are how most victims first get hooked."><span class="cl-text">It reached you via a random DM, a surprise group add, or paid influencer hype.</span></label>
+
+      <div class="cl-head">Worth a closer look</div>
+      <label class="cl-item"><input type="checkbox" data-w="1" data-flag="Hype without a working product is just a story you're being sold."><span class="cl-text">Brand new — a token and a hype campaign, but no working product.</span></label>
+      <label class="cl-item"><input type="checkbox" data-w="1" data-flag="Lazy, copied, or AI-filler docs signal a project that won't stick around."><span class="cl-text">Whitepaper / site is buzzword soup, copied, or obvious AI filler.</span></label>
+      <label class="cl-item"><input type="checkbox" data-w="1" data-flag="If only the project's own channels praise it, no one independent has vouched for it."><span class="cl-text">Only the project's own channels talk it up — no independent coverage.</span></label>
+      <label class="cl-item"><input type="checkbox" data-w="1" data-flag="No real audit means no independent eyes have checked the code for traps."><span class="cl-text">Contract is unaudited, or the "audit" link goes nowhere.</span></label>
+    </div>
+
+    <div class="verdict" id="verdict">
+      <h3 id="v-title">Tick the boxes above</h3>
+      <div class="v-sub" id="v-sub">As you check what's true, you'll get a plain-English reading here.</div>
+      <div class="flags" id="v-flags"></div>
+    </div>
+
+    <p class="goldenrule">The one rule that never fails: <b>no legitimate project, exchange, or wallet will ever ask for your seed phrase or private keys.</b> If something does — even if it looks official — it's a scam. Full stop.</p>
+  </section>
+
+  <!-- ================= TOOL 2: POSITION SIZE ================= -->
+  <section class="tool" id="position-size">
+    <div class="section-label">
+      <span class="dot" style="background:var(--blue);box-shadow:0 0 9px var(--blue)"></span>
+      <h2>Position size calculator</h2>
+    </div>
+    <p class="tool-intro">Work out how much to buy so a single trade can only lose a set slice of your account — the habit that keeps one bad call from wiping you out. This is risk-management math, not advice on <em>what</em> to trade.</p>
+
+    <div class="card calc">
+      <div class="field">
+        <label for="c-account">Account size</label>
+        <div class="inwrap"><span class="affix pre">$</span><input id="c-account" class="haspre" type="number" inputmode="decimal" value="1000" min="0" step="any"></div>
+      </div>
+      <div class="field">
+        <label for="c-risk">Risk per trade — how much of the account you'll accept losing</label>
+        <div class="inwrap"><span class="affix suf">%</span><input id="c-risk" class="hassuf" type="number" inputmode="decimal" value="1" min="0" max="100" step="any"></div>
+      </div>
+      <div class="field">
+        <label for="c-entry">Entry price</label>
+        <div class="inwrap"><span class="affix pre">$</span><input id="c-entry" class="haspre" type="number" inputmode="decimal" value="100" min="0" step="any"></div>
+      </div>
+      <div class="field">
+        <label for="c-stop">Stop-loss price — where you admit you were wrong and exit</label>
+        <div class="inwrap"><span class="affix pre">$</span><input id="c-stop" class="haspre" type="number" inputmode="decimal" value="90" min="0" step="any"></div>
+      </div>
+
+      <div class="calc-out" id="c-out">
+        <div class="calc-row"><span class="k">You're risking</span><span class="v" id="o-risk">—</span></div>
+        <div class="calc-row"><span class="k">Distance to stop</span><span class="v" id="o-dist">—</span></div>
+        <div class="calc-row"><span class="k">Position value</span><span class="v" id="o-value">—</span></div>
+        <div class="calc-row primary"><span class="k">Buy this much</span><span class="v" id="o-size">—</span></div>
+      </div>
+      <div class="calc-warn" id="c-warn"></div>
+      <div class="calc-err" id="c-err"></div>
+    </div>
+    <p class="calc-note">Spot only. Ignores fees, slippage, and leverage — real trades cost a little more than the math. If the position value comes out bigger than your account, that gap is leverage, and leverage multiplies losses just as fast as gains.</p>
+  </section>
+
+  <p class="more-tools">More on the way — a dollar-cost-averaging simulator and a true-cost fee checker, built the same way: no logins, no wallet, just numbers. <a href="/newsletter" data-umami-event="tools-newsletter">Get told when they land →</a></p>
+
+  <footer>
+    <div class="l">© <span id="yr"></span> Ozgnos · Not financial advice · DYOR</div>
+    <div class="socials">
+      <a href="https://x.com/ozgnos" target="_blank" rel="noopener" data-umami-event="outbound-x" id="x-link">X / Twitter</a>
+      <a href="https://t.me/ozgnosofficial" target="_blank" rel="noopener" data-umami-event="outbound-telegram" id="tg-link">Telegram</a>
+      <a href="/newsletter" id="nl-link">Newsletter</a>
+      <a href="/disclosure">How we make money</a>
+      <a href="https://ko-fi.com/ozgnos" target="_blank" rel="noopener" data-umami-event="outbound-support">Buy us a coffee</a>
+      <a href="mailto:contact@ozgnos.com">Contact</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+// year
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// theme toggle
+document.getElementById('themeToggle').addEventListener('click', function(){
+  var root = document.documentElement;
+  var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  root.setAttribute('data-theme', next);
+  try { localStorage.setItem('ozgnos-theme', next); } catch(e){}
+});
+
+// mobile menu
+var navlinks = document.getElementById('navlinks');
+document.getElementById('menuToggle').addEventListener('click', function(){
+  navlinks.classList.toggle('open');
+});
+document.querySelectorAll('#navlinks a').forEach(function(a){
+  a.addEventListener('click', function(){ navlinks.classList.remove('open'); });
+});
+
+// ---- Tool 1: scam checker ----
+(function(){
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('#checklist input[type=checkbox]'));
+  var vWrap = document.getElementById('verdict');
+  var vTitle = document.getElementById('v-title');
+  var vSub = document.getElementById('v-sub');
+  var vFlags = document.getElementById('v-flags');
+
+  function reading(){
+    var checked = boxes.filter(function(b){ return b.checked; });
+    var hasCritical = checked.some(function(b){ return parseInt(b.dataset.w,10) >= 100; });
+    var score = checked.reduce(function(s,b){ var w=parseInt(b.dataset.w,10); return s + (w>=100?0:w); }, 0);
+
+    var color, title, sub;
+    if(checked.length === 0){
+      vWrap.style.borderLeftColor = 'var(--muted)';
+      vTitle.textContent = 'Tick the boxes above';
+      vSub.textContent = 'As you check what\u2019s true, you\u2019ll get a plain-English reading here.';
+      vFlags.innerHTML = '';
+      return;
+    }
+    if(hasCritical){
+      color='var(--red)'; title='Stop. This is how wallets get drained.';
+      sub='You\u2019ve flagged something a real project would never do. Don\u2019t connect, don\u2019t enter your phrase, don\u2019t send anything. Walk away.';
+    } else if(score >= 9){
+      color='var(--red)'; title='Multiple serious red flags.';
+      sub='Almost everything here points to a scam. Treat it as one until something credible proves otherwise.';
+    } else if(score >= 4){
+      color='#FF9F43'; title='Several warning signs.';
+      sub='This has the shape of a lot of scams. Slow down and verify hard before trusting it with a cent.';
+    } else if(score >= 1){
+      color='var(--gold)'; title='A couple of caution flags.';
+      sub='Not damning on its own, but worth a closer look before you trust it.';
+    } else {
+      color='var(--green)'; title='No red flags caught here.';
+      sub='That\u2019s not a guarantee of safety \u2014 plenty of scams look clean at first. Keep your guard up.';
+    }
+    vWrap.style.borderLeftColor = color;
+    vTitle.textContent = title;
+    vSub.textContent = sub;
+
+    vFlags.innerHTML = '';
+    checked.forEach(function(b){
+      var row = document.createElement('div'); row.className='flag';
+      var ic = document.createElement('span'); ic.className='fi'; ic.textContent='\u26A0';
+      var tx = document.createElement('span'); tx.textContent = b.dataset.flag;
+      row.appendChild(ic); row.appendChild(tx); vFlags.appendChild(row);
+    });
+  }
+  boxes.forEach(function(b){ b.addEventListener('change', reading); });
+  reading();
+})();
+
+// ---- Tool 2: position size ----
+(function(){
+  var ids = ['c-account','c-risk','c-entry','c-stop'];
+  var inputs = {}; ids.forEach(function(i){ inputs[i]=document.getElementById(i); });
+  var oRisk=document.getElementById('o-risk'), oDist=document.getElementById('o-dist'),
+      oValue=document.getElementById('o-value'), oSize=document.getElementById('o-size'),
+      warn=document.getElementById('c-warn'), err=document.getElementById('c-err');
+
+  function money(n){ if(!isFinite(n)) return '—'; var d=Math.abs(n)<1?6:2; return '$'+n.toLocaleString('en-US',{minimumFractionDigits:(Math.abs(n)>=1?2:0),maximumFractionDigits:d}); }
+  function units(n){ if(!isFinite(n)) return '—'; var d=Math.abs(n)<1?6:4; return n.toLocaleString('en-US',{maximumFractionDigits:d}); }
+
+  function calc(){
+    var acct=parseFloat(inputs['c-account'].value);
+    var risk=parseFloat(inputs['c-risk'].value);
+    var entry=parseFloat(inputs['c-entry'].value);
+    var stop=parseFloat(inputs['c-stop'].value);
+    warn.style.display='none'; err.style.display='none';
+
+    function blank(){ oRisk.textContent=oDist.textContent=oValue.textContent=oSize.textContent='—'; }
+
+    if([acct,risk,entry,stop].some(function(v){ return !isFinite(v); })){ blank(); return; }
+    if(acct<=0||risk<=0||entry<=0){ blank(); return; }
+    if(entry===stop){ blank(); err.textContent='Entry and stop-loss can\u2019t be the same price — there\u2019d be no defined risk.'; err.style.display='block'; return; }
+
+    var riskAmt = acct * (risk/100);
+    var perUnit = Math.abs(entry - stop);
+    var size = riskAmt / perUnit;
+    var value = size * entry;
+    var distPct = perUnit / entry * 100;
+
+    oRisk.textContent = money(riskAmt) + '  (' + risk + '% of account)';
+    oDist.textContent = distPct.toLocaleString('en-US',{maximumFractionDigits:2}) + '%  ' + (stop < entry ? '(long)' : '(short)');
+    oValue.textContent = money(value);
+    oSize.textContent = units(size) + ' units';
+
+    if(value > acct){
+      warn.textContent = 'Heads up: this position is worth more than your whole account ('+money(value)+' vs '+money(acct)+'). On spot you simply can\u2019t buy that much; reaching it means leverage — and leverage can liquidate you before your stop is ever hit.';
+      warn.style.display='block';
+    } else if(risk > 5){
+      warn.textContent = 'Risking '+risk+'% on one trade is aggressive — a short losing streak adds up fast. Many traders keep it at 1–2%.';
+      warn.style.display='block';
+    }
+  }
+  ids.forEach(function(i){ inputs[i].addEventListener('input', calc); });
+  calc();
+})();
+</script>
+</body>
+</html>
