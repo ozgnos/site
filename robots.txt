@@ -1,0 +1,44 @@
+# ozgnos.com — open to all search engines and AI crawlers
+User-agent: *
+Allow: /
+Disallow: /go/
+Disallow: /api/
+
+# AI / LLM crawlers — explicitly welcome
+User-agent: GPTBot
+Allow: /
+Disallow: /go/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /go/
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /go/
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /go/
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+Disallow: /go/
+
+User-agent: meta-externalagent
+Allow: /
+Disallow: /go/
+
+Sitemap: https://ozgnos.com/sitemap.xml

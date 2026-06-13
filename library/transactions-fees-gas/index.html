@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var s=localStorage.getItem('ozgnos-theme');if(s==='light'||s==='dark')document.documentElement.setAttribute('data-theme',s);}catch(e){}})();</script>
+<title>Transactions, Fees, and &quot;Gas&quot; · Ozgnos</title>
+<meta name="description" content="Every time you move crypto on a blockchain, you pay a small fee called &quot;gas,&quot; and it exists to pay the network and stop people from spamming it.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Ozgnos">
+<meta property="og:title" content="Transactions, Fees, and &quot;Gas&quot;">
+<meta property="og:description" content="Every time you move crypto on a blockchain, you pay a small fee called &quot;gas,&quot; and it exists to pay the network and stop people from spamming it.">
+<meta property="og:url" content="https://ozgnos.com/library/transactions-fees-gas">
+<meta property="og:image" content="https://ozgnos.com/og/transactions-fees-gas.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Transactions, Fees, and &quot;Gas&quot;">
+<meta name="twitter:description" content="Every time you move crypto on a blockchain, you pay a small fee called &quot;gas,&quot; and it exists to pay the network and stop people from spamming it.">
+<meta name="twitter:image" content="https://ozgnos.com/og/transactions-fees-gas.png">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script defer src="/nav.js"></script>
+<script defer src="https://analytics.ozgnos.com/script.js" data-website-id="f2d52f8f-84c6-47b9-b4ff-22d0c1a70944"></script>
+<link rel="canonical" href="https://ozgnos.com/library/transactions-fees-gas">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": ["Article", "LearningResource"], "headline": "Transactions, Fees, and \"Gas\"", "description": "Every time you move crypto on a blockchain, you pay a small fee called \"gas,\" and it exists to pay the network and stop people from spamming it.", "url": "https://ozgnos.com/library/transactions-fees-gas", "image": "https://ozgnos.com/og/transactions-fees-gas.png", "inLanguage": "en", "isAccessibleForFree": true, "datePublished": "2026-06-11", "dateModified": "2026-06-11", "author": {"@type": "Organization", "name": "Ozgnos", "url": "https://ozgnos.com/", "logo": "https://ozgnos.com/apple-touch-icon.png"}, "publisher": {"@type": "Organization", "name": "Ozgnos", "url": "https://ozgnos.com/", "logo": "https://ozgnos.com/apple-touch-icon.png"}, "educationalLevel": "Beginner", "about": "Cryptocurrency"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ozgnos.com/"}, {"@type": "ListItem", "position": 2, "name": "Library", "item": "https://ozgnos.com/library"}, {"@type": "ListItem", "position": 3, "name": "Transactions, Fees, and \"Gas\"", "item": "https://ozgnos.com/library/transactions-fees-gas"}]}]}</script>
+</head>
+<body>
+<div class="grid-bg"></div>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="logo" viewBox="0 0 340 200">
+  <g fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M150 30 L74 172 L226 172 Z" stroke="currentColor" stroke-width="14"/>
+    <line x1="6" y1="130" x2="332" y2="130" stroke="currentColor" stroke-width="13"/>
+    <line x1="196" y1="130" x2="335" y2="74" stroke="#F2941E" stroke-width="13"/>
+    <line x1="196" y1="130" x2="335" y2="172" stroke="#F2941E" stroke-width="13"/>
+  </g>
+</symbol></defs></svg>
+<div class="wrap">
+<nav class="site-nav">
+    <a class="brand" href="/"><svg><use href="#logo"/></svg><span class="nm">Ozgnos</span></a>
+    <div class="navlinks" id="navlinks">
+      <a href="/library">Library</a>
+      <a href="/markets">Markets</a>
+      <a href="/newsletter">Newsletter</a>
+      <a href="/about">About</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+<section class="article-hero"><a class="back" href="/library">← All lessons</a><div class="eyebrow">How It Works</div><h1>Transactions, Fees, and &quot;Gas&quot;</h1><div class="meta">4 min read</div></section>
+<article class="article-body"><p>If you've heard someone complain about a "gas fee," this is what they mean, and it has nothing to do with cars.</p>
+<h2>Why is there a fee at all?</h2>
+<p>Remember that a blockchain is run by a network of computers, not one company. When you send crypto or use an app on it, those computers have to do work to process and confirm your transaction. The fee pays them for that work. It serves two purposes: it compensates the network for processing your transaction, and it discourages spam, since attackers can't flood the network with endless junk if every action costs money.</p>
+<p>Think of it like postage for a letter, or a toll for crossing a bridge. A small charge for using shared infrastructure.</p>
+<h2>Why is it called "gas"?</h2>
+<p>The nickname comes from the idea of fuel. Your transaction asks the network to do some computation, and gas is the fuel that powers it. A simple transfer costs less than a complex action like a token swap, because the swap asks the network to do more work. More work, more fuel, higher fee. On Ethereum, this fee is always paid in ETH, the network's own coin.</p>
+<h2>Why do fees go up and down?</h2>
+<p>This is the part that surprises people. Fees aren't fixed. They rise and fall with demand. Blockchains have limited capacity, so when lots of people want to transact at once, users effectively bid for priority and fees climb. When the network is quiet, fees drop. On a busy day, an Ethereum fee can range from cents to a lot more depending on congestion.</p>
+<p>This is also why you'll hear about different networks. "Layer 2" networks like Base or Arbitrum handle transactions more cheaply and settle back to Ethereum, which is the main solution to high fees. On Solana, fees are so small they're effectively a fraction of a cent. We'll cover networks properly in the next piece.</p>
+<h2>A common point of confusion</h2>
+<p>Here's one that trips up beginners. When you buy crypto on a centralized exchange, you don't pay gas, because that trade happens on the company's system, not on the blockchain itself. You only pay a gas fee when you withdraw to your own wallet, or move crypto on-chain. So the exchange may charge its own separate fees, but "gas" specifically is about moving on the blockchain.</p>
+<h2>A practical note</h2>
+<p>Because fees swing with demand, timing matters. If fees look high, it's often because the network is congested; most wallets now show a fee estimate before you confirm, so you can see the cost upfront and decide whether to wait. There's no need to overpay blindly.</p>
+<h2>The takeaway</h2>
+<p>Gas is the fee you pay to move crypto on a blockchain. It pays the network for the work and keeps spammers out. More complex actions cost more, busy times cost more, and different networks cost wildly different amounts. And remember: you only pay gas for on-chain moves, not for a simple buy on an exchange. Check the estimated fee before you confirm, and you'll never be caught off guard.</p></article>
+<a class="next-up" href="/library/networks-and-layers"><span class="next-label">Next up →</span><span class="next-title">Networks and &quot;layers&quot; (L1 and L2)</span></a>
+<p class="nl-line">Want breakdowns like this in your inbox? <a href="/newsletter" data-umami-event="article-newsletter-link">Join the free newsletter →</a></p>
+<footer>
+    <div class="l">© <span id="yr"></span> Ozgnos · Not financial advice · DYOR</div>
+    <div class="socials">
+      <a href="https://x.com/ozgnos" target="_blank" rel="noopener" data-umami-event="outbound-x" id="x-link">X / Twitter</a>
+      <a href="https://t.me/ozgnosofficial" target="_blank" rel="noopener" data-umami-event="outbound-telegram" id="tg-link">Telegram</a>
+      <a href="/newsletter" id="nl-link">Newsletter</a>
+      <a href="/disclosure">How we make money</a>
+      <a href="https://ko-fi.com/ozgnos" target="_blank" rel="noopener" data-umami-event="outbound-support">Buy us a coffee</a>
+      <a href="mailto:contact@ozgnos.com">Contact</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+  </footer>
+</div>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+document.getElementById('themeToggle').addEventListener('click', function(){
+  var root = document.documentElement;
+  var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  root.setAttribute('data-theme', next);
+  try { localStorage.setItem('ozgnos-theme', next); } catch(e){}
+});
+var navlinks = document.getElementById('navlinks');
+document.getElementById('menuToggle').addEventListener('click', function(){ navlinks.classList.toggle('open'); });
+document.querySelectorAll('#navlinks a').forEach(function(a){ a.addEventListener('click', function(){ navlinks.classList.remove('open'); }); });
+</script>
+</body>
+</html>
